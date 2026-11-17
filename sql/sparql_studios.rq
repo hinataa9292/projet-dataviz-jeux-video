@@ -1,0 +1,16 @@
+# Studios et éditeurs de jeux vidéo géolocalisés par la ville de leur siège
+# Wikidata Query Service : https://query.wikidata.org/ – export CSV du 16/11/2026 → data/studios.csv
+#defaultView:Map
+SELECT ?studio ?studioLabel (SAMPLE(?paysLabel) AS ?pays) (SAMPLE(?villeLabel) AS ?ville)
+  (MIN(YEAR(?creation)) AS ?annee_creation) (SAMPLE(?lat) AS ?latitude) (SAMPLE(?lon) AS ?longitude) (SAMPLE(?coord) AS ?coord)
+WHERE {
+  { ?studio wdt:P31 wd:Q210167 } UNION { ?studio wdt:P452 wd:Q941594 }
+  ?studio wdt:P159 ?ville .
+  ?ville wdt:P625 ?coord .
+  ?ville p:P625/psv:P625 [ wikibase:geoLatitude ?lat ; wikibase:geoLongitude ?lon ] .
+  OPTIONAL { ?studio wdt:P17 ?pays }
+  OPTIONAL { ?studio wdt:P571 ?creation }
+  SERVICE wikibase:label { bd:serviceParam wikibase:language "fr,en".
+    ?studio rdfs:label ?studioLabel . ?pays rdfs:label ?paysLabel . ?ville rdfs:label ?villeLabel . }
+}
+GROUP BY ?studio ?studioLabel

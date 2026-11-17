@@ -1,0 +1,23 @@
+# --- Secrets et configuration locale (ne jamais publier) ---
+.vscode/
+*.env
+.env*
+*.dsn
+settings.json
+
+# --- Fichiers temporaires Tableau ---
+*.twb~
+*.twbr
+~*
+*.tmp
+*.hyper
+Tableau Desktop/
+Backups/
+
+# --- Fichiers Office ouverts ---
+~$*
+
+# --- Fichiers système Windows ---
+Thumbs.db
+desktop.ini
+*.lnk

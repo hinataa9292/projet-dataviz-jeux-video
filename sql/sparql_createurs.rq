@@ -1,0 +1,14 @@
+# Personnes ayant conçu au moins un jeu vidéo (propriété P287 « conçu par »)
+# Wikidata Query Service : https://query.wikidata.org/ – export CSV du 16/11/2026 → data/createurs_de_jeux.csv
+SELECT ?personne ?personneLabel (SAMPLE(?sexeLabel) AS ?sexe) (SAMPLE(?paysLabel) AS ?pays)
+  (MIN(YEAR(?naissance)) AS ?annee_naissance) (COUNT(DISTINCT ?jeu) AS ?nb_jeux)
+WHERE {
+  ?jeu wdt:P31 wd:Q7889 ; wdt:P287 ?personne .
+  ?personne wdt:P31 wd:Q5 .
+  OPTIONAL { ?personne wdt:P21 ?s }
+  OPTIONAL { ?personne wdt:P27 ?p }
+  OPTIONAL { ?personne wdt:P569 ?naissance }
+  SERVICE wikibase:label { bd:serviceParam wikibase:language "fr,en,mul".
+    ?personne rdfs:label ?personneLabel . ?s rdfs:label ?sexeLabel . ?p rdfs:label ?paysLabel . }
+}
+GROUP BY ?personne ?personneLabel

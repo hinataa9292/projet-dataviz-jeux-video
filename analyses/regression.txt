@@ -1,0 +1,20 @@
+Modèle de courbes de tendance
+
+Un modèle de tendance linéaire est calculé pour la la somme de Ventes Monde en un point de le total distinct de Id.  Le modèle peut être significatif lorsque p <= 0,05.
+
+Formule du modèle :	( Total distinct de Id + intercept )
+Nombre d’observations modélisées :	579
+Nombre d’observations filtrées :	0
+Degrés de liberté du modèle :	2
+Degrés de liberté résiduels (DL) :	577
+ESC (erreur somme des carrés) :	2,21724e+06
+EMC (erreur moyenne des carrés) :	3842,7
+R au carré :	0,639534
+Erreur standard :	61,9895
+Valeur p (importance) :	< 0,0001
+
+Courbes de tendance individuelles :
+Volets	Ligne	Coefficients
+Ligne	Colonne	valeur p	DL	Terme	Valeur	Errstd	valeur t	valeur p
+Ventes Monde	Total distinct de Id	< 0,0001	577	Total distinct de Id	0,709943	0,0221889	31,9954	< 0,0001
+	intercept	-4,93832	2,65351	-1,86105	0,0632451

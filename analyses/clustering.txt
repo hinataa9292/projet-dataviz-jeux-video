@@ -1,0 +1,38 @@
+Analyse de la variance :
+
+									Modèle					Erreur			
+Variable			Statistiques F			Valeur-p			Somme des carrés		DF			Somme des carrés		DF	
+Part JP			8.589			0.0003632			3.993		3			4.184		27	
+Part AmériqueNord			7.972			0.0005782			1.959		3			2.211		27	
+Part EU			7.073			0.001172			1.588		3			2.021		27	
+
+
+
+
+
+
+Entrées pour le clustering
+
+Variables :	Part AmériqueNord
+Part JP
+Part EU
+Niveau de détail :	Plateforme
+Mise à l’échelle :	Normalisé
+
+
+Résumé du diagnostic
+
+Nombre de clusters :	4
+Nombre de points :	31
+Somme des carrés entre les groupes :	7.5396
+Somme des carrés dans le groupe :	0.87599
+Somme totale des carrés :	8.4156
+
+
+								Centres												
+Clusters					Nombre d’éléments			Part AmériqueNord				Part JP				Part EU				
+Cluster 1					6			0.70484				0.085447				0.18417				
+Cluster 2					7			0.0030621				0.99434				0.0022966				
+Cluster 3					9			0.39479				0.36553				0.18137				
+Cluster 4					9			0.47363				0.075984				0.34461				
+Pas dans un cluster					0	
